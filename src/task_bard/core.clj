@@ -11,6 +11,7 @@
       [task
         (input "What needs doing?" (fn [x] (if (= "" x) "Sorry?")))]
       (println)
+      (spit "/Users/apetro/.task-bard/current-task" task)
       (println "Okay. Then do " task)
       (while (not (confirm (str "Is " task " done yet"))))
       (println)
